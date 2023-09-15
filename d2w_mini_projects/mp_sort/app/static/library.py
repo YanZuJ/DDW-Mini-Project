@@ -1,6 +1,6 @@
 from org.transcrypt.stubs.browser import *
 import random
-
+#Peepeepoopoo
 def gen_random_int(number,seed):
     ls = []
     for i in range(0,number):
