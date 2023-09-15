@@ -1,6 +1,6 @@
 from org.transcrypt.stubs.browser import *
 import random
-#Peepeepoopoo
+
 def gen_random_int(number,seed):
     ls = []
     for i in range(0,number):
@@ -9,28 +9,50 @@ def gen_random_int(number,seed):
     random.shuffle(ls)
     return ls
 
+#Qi Xiang
 def generate():
-	number = 10
-	seed = 200
-	array = []
+	number = 10 #preset
+    seed = 200 #preset
 
-	# call gen_random_int() with the given number and seed
-	# store it to the variable array
-	array.append(gen_random_int(number,seed))
+    # call gen_random_int() with the given number and seed
+    # store it to the variable array
+    array = gen_random_int(number,seed)
 
-	# convert the items into one single string 
-	# the number should be separated by a comma
-	# and a full stop should end the string
-	array_str = ""
-	array_str.join(str(e) for e in array)
-	array_str = array_str + "."
+    # convert all the items into one single string by iterating str() into each element using map() 
+    # the numbers should be separated by a comma
+    # and a full stop should end the string
+    array_str = ','.join(map(str, array))      
+    array_str += "."
 
 	# This line is to placed the string into the HTML
 	# under div section with the id called "generate"	
 	document.getElementById("generate").innerHTML = array_str
 
-
+#Joe
 def sortnumber1():
+	document.getElementById("generate").innerHTML = ls_str
+	# remove full stop, split by ',', map int to str objects in ls
+	ls_str = ls_str[:-1]
+	ls_str = ls_str.split(",")
+	ls_int = list(map(int,ls_str))
+
+	#bubble sort v4
+    n = len(ls_int)
+    swapped = True
+    while swapped:
+        swapped = False
+        new_n = 0
+        for idx in range(1, n):
+            if ls_int[idx-1] > ls_int[idx]:
+                ls_int[idx - 1], ls_int[idx] = ls_int[idx], ls_int[idx - 1]
+                swapped = True
+                new_n = idx
+        n= new_n
+    
+	# convert all the items into one single string by iterating str() into each element using map()
+    array_str = ','.join(map(str, ls_int))
+	document.getElementById("sorted").innerHTML = array_str
+
 	'''	This function is used in Exercise 1.
 		The function is called when the sort button is clicked.
 
@@ -40,12 +62,8 @@ def sortnumber1():
 		- call your sort function, either bubble sort or insertion sort
 		- create a string of the sorted numbers and store it in array_str
 	'''
-	pass
 
-	array_str = None
-	
-	document.getElementById("sorted").innerHTML = array_str
-
+#Kaelen
 def sortnumber2():
 	'''	This function is used in Exercise 2.
 		The function is called when the sort button is clicked.
