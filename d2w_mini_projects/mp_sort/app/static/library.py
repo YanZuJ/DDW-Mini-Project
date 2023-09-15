@@ -2,9 +2,12 @@ from org.transcrypt.stubs.browser import *
 import random
 
 def gen_random_int(number, seed):
-	random.seed(seed)
-	random_number = random.randint(0,number)
-	return random_number
+	ls = []
+    	for i in range(0,number):
+        	ls.append(i)
+    	random.seed(seed)
+    	random.shuffle(ls)
+    	return ls
 
 def generate():
 	number = 10
