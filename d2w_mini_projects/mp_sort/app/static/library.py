@@ -12,17 +12,17 @@ def gen_random_int(number,seed):
 #Qi Xiang
 def generate():
 	number = 10 #preset
-    seed = 200 #preset
+   	seed = 200 #preset
 
-    # call gen_random_int() with the given number and seed
-    # store it to the variable array
-    array = gen_random_int(number,seed)
+    	# call gen_random_int() with the given number and seed
+    	# store it to the variable array
+    	array = gen_random_int(number,seed)
 
-    # convert all the items into one single string by iterating str() into each element using map() 
-    # the numbers should be separated by a comma
-    # and a full stop should end the string
-    array_str = ','.join(map(str, array))      
-    array_str += "."
+    	# convert all the items into one single string by iterating str() into each element using map() 
+    	# the numbers should be separated by a comma
+    	# and a full stop should end the string
+	array_str = ','.join(map(str, array))      
+    	array_str += "."
 
 	# This line is to placed the string into the HTML
 	# under div section with the id called "generate"	
@@ -37,20 +37,20 @@ def sortnumber1():
 	ls_int = list(map(int,ls_str))
 
 	#bubble sort v4
-    n = len(ls_int)
-    swapped = True
-    while swapped:
-        swapped = False
-        new_n = 0
-        for idx in range(1, n):
-            if ls_int[idx-1] > ls_int[idx]:
-                ls_int[idx - 1], ls_int[idx] = ls_int[idx], ls_int[idx - 1]
-                swapped = True
-                new_n = idx
-        n= new_n
+    	n = len(ls_int)
+    	swapped = True
+    	while swapped:
+        	swapped = False
+        	new_n = 0
+        	for idx in range(1, n):
+            		if ls_int[idx-1] > ls_int[idx]:
+                	ls_int[idx - 1], ls_int[idx] = ls_int[idx], ls_int[idx - 1]
+                	swapped = True
+                	new_n = idx
+        	n= new_n
     
-	# convert all the items into one single string by iterating str() into each element using map()
-    array_str = ','.join(map(str, ls_int))
+# convert all the items into one single string by iterating str() into each element using map()
+    	array_str = ','.join(map(str, ls_int))
 	document.getElementById("sorted").innerHTML = array_str
 
 	'''	This function is used in Exercise 1.
