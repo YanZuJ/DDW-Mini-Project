@@ -16,7 +16,7 @@ def generate():
     array = gen_random_int(number,seed)   
     array_str = ','.join(map(str, array))      
     array_str += "."
-	document.getElementById("generate").innerHTML = array_str
+    document.getElementById("generate").innerHTML = array_str
 
 #Joe
 def sortnumber1():
@@ -25,22 +25,22 @@ def sortnumber1():
 	ls_str = ls_str[:-1]
 	ls_str = ls_str.split(",")
 	ls_int = list(map(int,ls_str))
-
+	
 	#bubble sort v4
-    n = len(ls_int)
-    swapped = True
-    while swapped:
-        swapped = False
-        new_n = 0
-        for idx in range(1, n):
-            if ls_int[idx-1] > ls_int[idx]:
-                ls_int[idx - 1], ls_int[idx] = ls_int[idx], ls_int[idx - 1]
-                swapped = True
-                new_n = idx
-        n= new_n
-    
-# convert all the items into one single string by iterating str() into each element using map()
-    array_str = ','.join(map(str, ls_int))
+	n = len(ls_int)
+	swapped = True
+	while swapped:
+		swapped = False
+		new_n = 0
+		for idx in range(1, n):
+			if ls_int[idx-1] > ls_int[idx]:
+				ls_int[idx - 1], ls_int[idx] = ls_int[idx], ls_int[idx - 1]
+				swapped = True
+				new_n = idx
+		n= new_n    
+	
+	# convert all the items into one single string by iterating str() into each element using map()
+	array_str = ','.join(map(str, ls_int))
 	document.getElementById("sorted").innerHTML = array_str
 
 	'''	This function is used in Exercise 1.
