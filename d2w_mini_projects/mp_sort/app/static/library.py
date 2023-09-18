@@ -72,7 +72,8 @@ def sortnumber2():
 	if value == "":
 		window.alert("Your textbox is empty")
 		return
-
+	else:
+		
 	# Your code should start from here
 	# store the final string to the variable array_str
 	pass
