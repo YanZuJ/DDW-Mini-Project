@@ -72,12 +72,12 @@ def sortnumber2():
 	if value == "":
 		window.alert("Your textbox is empty")
 		return
+	
 	else:
-		
+		pass
 	# Your code should start from here
 	# store the final string to the variable array_str
-	pass
-
+	
 	array_str = None
 
 	document.getElementById("sorted").innerHTML = array_str
