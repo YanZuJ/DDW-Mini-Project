@@ -74,11 +74,23 @@ def sortnumber2():
 		return
 	
 	else:
-		pass
-	# Your code should start from here
-	# store the final string to the variable array_str
+		#Convert input string into list of ints
+		array_str = value.split(",") #Splits list into each number
+
+		for i in range(len(array_str)):
+			array_str[i]=int(array_str[i].strip()) #Removes whitespace, converts each element to int
+		
+		def insertion_sort(ls):
+			n = range(len(ls))
+			for i in (1,n):
+				if ls[i] > ls[i-1]:
+					ls[i], ls[i-1] = ls[i-1], ls[i]
+				else:
+					continue
+			strg = str(ls)
+			return strg
 	
-	array_str = None
+	array_str = insertion_sort(array_str)
 
 	document.getElementById("sorted").innerHTML = array_str
 
