@@ -81,13 +81,21 @@ def sortnumber2():
 			array_str[i]=int(array_str[i].strip()) #Removes whitespace, converts each element to int
 		
 		def insertion_sort(ls):
-			n = range(len(ls))
-			for i in (1,n):
-				if ls[i] > ls[i-1]:
-					ls[i], ls[i-1] = ls[i-1], ls[i]
-				else:
-					continue
-			strg = str(ls)
+			n = len(ls)
+			
+			#Outer loop iterates selection of temp var, moving progressively towards the right.
+			for out_idx in range(1,n):
+				inn_idx = out_idx
+				temp = ls[inn_idx]
+
+				#Inner loop compares terms on the left of temp.
+				while inn_idx>0 and ls[inn_idx-1]>temp:
+				#2 possible termination conditions: inn_idx reaches 0 OR ls[inn_idx]<temp.
+
+					ls[inn_idx-1], ls[inn_idx] = ls[inn_idx], ls[inn_idx-1] #Shift compared term to the right
+					inn_idx -= 1 #Iterate inner loop backwards
+			strg=", "
+			strg=strg.join(str(i) for i in ls)
 			return strg
 	
 	array_str = insertion_sort(array_str)
