@@ -75,11 +75,17 @@ def sortnumber2():
 	
 	else:
 		#Convert input string into list of ints
-		array_str = value.split(",") #Splits list into each number
+		array_str = value.split(",") #Splits input string into a list of numbers
+		array_ls = [] #Creates an empty list
 
 		for i in range(len(array_str)):
-			array_str[i]=int(array_str[i].strip()) #Removes whitespace, converts each element to int
-		
+			if array_str[i] == '': #Weeds out empty list entries due to extra or trailing commas in input
+				continue
+			else:    
+				array_str[i]=int(array_str[i].strip()) #Removes whitespace, converts each element to int type
+				array_ls.append(array_str[i]) #Adds each element into array_ls
+
+		#Function to perform optimized insertion sort
 		def insertion_sort(ls):
 			n = len(ls)
 			
@@ -90,15 +96,18 @@ def sortnumber2():
 
 				#Inner loop compares terms on the left of temp.
 				while inn_idx>0 and ls[inn_idx-1]>temp:
-				#2 possible termination conditions: inn_idx reaches 0 OR ls[inn_idx]<temp.
+				#Two possible termination conditions: inn_idx reaches 0 OR ls[inn_idx]<temp.
 
 					ls[inn_idx-1], ls[inn_idx] = ls[inn_idx], ls[inn_idx-1] #Shift compared term to the right
 					inn_idx -= 1 #Iterate inner loop backwards
+			
+			#Converts list back into string
 			strg=", "
 			strg=strg.join(str(i) for i in ls)
 			return strg
 	
-	array_str = insertion_sort(array_str)
+		#Applies insertion_sort() onto array_ls, and assigns sorted list back into array_str
+		array_str = insertion_sort(array_ls)
 
 	document.getElementById("sorted").innerHTML = array_str
 
