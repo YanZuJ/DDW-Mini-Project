@@ -6,9 +6,8 @@ class PrefixMiddleware(object):
     def __init__(self, app, voc=True):
         self.app = app
         if voc:
-            myip = self.get_myip()
-            mytoken = os.getenv("VOC_PROXY_TOKEN")
-            self.prefix = f'/hostip/{myip}:5000/vocproxy/{mytoken}'
+            self.prefix = f'/proxy/5000/'
+
         else:
             self.prefix = ''
 
