@@ -7,7 +7,6 @@ class PrefixMiddleware(object):
         self.app = app
         if voc:
             self.prefix = f'/proxy/5000/'
-
         else:
             self.prefix = ''
 

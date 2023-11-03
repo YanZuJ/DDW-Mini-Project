@@ -41,3 +41,4 @@ class Records:
 		return self.items[question_id].elapsedtime
 
 records = Records()
+/voc/work/DDW-Mini-Project/d2w_mini_projects/mp_calc
